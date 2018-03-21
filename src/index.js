@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {UIRouter, UIView} from '@uirouter/react';
-import {plugins, states, config} from "./router.config";
+import {plugins, states, config} from "./configs/router.config";
 import NavBar from "./components/navbar/navbar";
+
+
 
 const App = () => (
     <div>

@@ -1,21 +1,41 @@
 import React from 'react';
 import {UISrefActive, UISref} from '@uirouter/react';
+import {getAllCategories} from "../../commons/resources/category/category.resource";
 
-const NavBar = () => {
-    return (
-        <div className="nav">
-            <UISrefActive class="active">
-                <UISref to="hello">
-                    <a>Hello</a>
-                </UISref>
-            </UISrefActive>{' '}
-            <UISrefActive class="active">
-                <UISref to="world">
-                    <a>World</a>
-                </UISref>
-            </UISrefActive>
-        </div>
-    );
-};
+export default class NavBar extends React.Component {
 
-export default NavBar;
+    constructor() {
+        super();
+        this.state = {
+            categories: []
+        };
+    }
+
+    componentWillMount() {
+        getAllCategories().then(categories => {
+            this.setState({
+                categories: categories
+            });
+        });
+    }
+
+    render() {
+        return (
+            <ul className="nav">
+                {this.state.categories.map( category => {
+                    return (
+                        <UISrefActive class="active">
+                            <UISref to="hello">
+                                <li><a>{category.name}</a></li>
+                            </UISref>
+                        </UISrefActive>
+                    );
+                })}
+            </ul>
+        );
+    }
+}
+
+
+
+
