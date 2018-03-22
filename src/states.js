@@ -25,6 +25,14 @@ export const dashboard = {
                 const params = transition.params();
                 return videoService.getTotalVideosByCategory(params.categoryId, params.page, params.perPage);
             }
+        },
+        {
+            token: 'categoryId',
+            deps: ['$transition$'],
+            resolveFn: (transition) => {
+                const params = transition.params();
+                return params.categoryId;
+            }
         }
     ]
 };

@@ -1,20 +1,24 @@
 import React from 'react';
-import './video-list.component.css'
 import {UISref} from "@uirouter/react";
+import './video-list.component.css';
 
 export class VideoList extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            videos: props.videos
-        }
+            videos: props.videos,
+            pages: Math.ceil(props.totalVideos / 12),
+            categoryId: props.categoryId
+        };
     }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.videos !== this.props.videos) {
             this.setState({
-                videos: nextProps.videos
+                videos: nextProps.videos,
+                pages: Math.ceil(nextProps.totalVideos / 12),
+                categoryId: nextProps.categoryId
             });
         }
     }

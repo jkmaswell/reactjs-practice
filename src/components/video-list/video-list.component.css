@@ -66,10 +66,6 @@ main {
         opacity: 0.5; }
       main .video a:hover figure .image .hover {
         opacity: 1; }
-  main .pagination-container {
-    display: inline-block;
-    text-align: center;
-    width: 100%; }
   @media screen and (max-width: 1024px) {
     main {
       padding-left: 0; } }

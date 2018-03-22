@@ -1,0 +1,56 @@
+@import "../../commons/scss/variables";
+
+.pagination-container {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+
+    .pagination {
+        display: inline-block;
+        padding-left: 0;
+        margin: 20px 0;
+        border-radius: 4px;
+
+        .next,
+        .previous {
+            display: none;
+        }
+
+        li {
+            display: inline;
+            cursor: pointer;
+
+            a {
+                position: relative;
+                float: left;
+                padding: 6px 12px;
+                margin-left: -1px;
+                line-height: 1.42857143;
+                color: $vimeo-purple;
+                text-decoration: none;
+                background-color: $vimeo-white;
+                border: 1px solid $vimeo-gray;
+
+                &:focus,
+                &:hover {
+                    z-index: 3;
+                    color: $vimeo-white;
+                    background-color: $vimeo-purple;
+                    border-color: $vimeo-purple;
+                }
+            }
+
+            &.active {
+                a,
+                a:focus,
+                a:hover {
+                    z-index: 3;
+                    color: $vimeo-white;
+                    cursor: default;
+                    background-color: $vimeo-purple;
+                    border-color: $vimeo-purple;
+                }
+            }
+        }
+    }
+}
