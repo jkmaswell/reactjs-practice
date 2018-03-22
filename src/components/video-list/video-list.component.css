@@ -1,0 +1,74 @@
+main {
+  display: inline-block;
+  padding-left: 322px;
+  width: 100%; }
+  main .row {
+    margin: 0; }
+  main .col-md-3 {
+    float: left; }
+    @media screen and (min-width: 1367px) {
+      main .col-md-3:nth-child(4n+1) {
+        clear: both; } }
+    @media screen and (min-width: 1025px) and (max-width: 1366px) {
+      main .col-md-3 {
+        width: 33.333333%; }
+        main .col-md-3:nth-child(3n+1) {
+          clear: both; } }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      main .col-md-3 {
+        width: 50%; }
+        main .col-md-3:nth-child(2n+1) {
+          clear: both; } }
+    @media screen and (max-width: 767px) {
+      main .col-md-3 {
+        width: 100%; } }
+  main .video {
+    margin-top: 2rem; }
+    main .video a {
+      cursor: pointer; }
+      main .video a figure .image {
+        background: #000000;
+        height: 0;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        padding-bottom: 55.40541%;
+        position: relative; }
+        @media screen and (max-width: 767px) {
+          main .video a figure .image {
+            max-height: 400px; } }
+        main .video a figure .image img {
+          bottom: 0;
+          left: 0;
+          margin: auto;
+          position: absolute;
+          right: 0;
+          transition: all 0.3s ease-in-out;
+          top: 0; }
+        main .video a figure .image .hover {
+          background: url("../../assets/vimeotest-symbol.png") center center no-repeat;
+          background-size: 20%;
+          height: 100%;
+          left: 0;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          transition: all 0.3s ease-in-out;
+          width: 100%; }
+      main .video a figure figcaption {
+        color: #635492;
+        font-size: 1.5rem;
+        font-weight: 700;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      main .video a:hover figure .image img {
+        opacity: 0.5; }
+      main .video a:hover figure .image .hover {
+        opacity: 1; }
+  main .pagination-container {
+    display: inline-block;
+    text-align: center;
+    width: 100%; }
+  @media screen and (max-width: 1024px) {
+    main {
+      padding-left: 0; } }

@@ -1,14 +1,12 @@
-import {VimeoApiKey} from "../../../constants/constants";
+import React from "react";
+import {VimeoApiKey} from "../../../constants/app.constants";
 import * as axios from "axios";
 
-export {getAllCategories}
+export class CategoryResource extends React.Component {
 
-function getAllCategories() {
-    return axios.get(VimeoApiKey.vimeoBaseUrl + 'categories').then(categories => {
-        categories.data.data.forEach(element => {
-            element.id = element.uri.split('/').pop();
-        });
-        return categories.data.data;
-    });
+    getAllCategories() {
+        return axios.get(VimeoApiKey.vimeoBaseUrl + 'categories');
+    }
+
 }
 
