@@ -14,7 +14,6 @@ export const dashboard = {
             resolveFn: (transition) => {
                 const videoService = new VideoService();
                 const params = transition.params();
-                console.log(params);
                 return videoService.getVideosByCategory(params.categoryId, params.page, params.perPage);
             }
         },
@@ -32,6 +31,26 @@ export const dashboard = {
 
 export const video = {
     name: 'video',
-    url: '/video',
-    component: Video
+    url: '/video/?videoId',
+    component: Video,
+    resolve: [
+        {
+            token: 'video',
+            deps: ['$transition$'],
+            resolveFn: (transition) => {
+                const videoService = new VideoService();
+                const params = transition.params();
+                return videoService.getVideoDetail(params.videoId);
+            }
+        },
+        {
+            token: 'comments',
+            deps: ['$transition$'],
+            resolveFn: (transition) => {
+                const videoService = new VideoService();
+                const params = transition.params();
+                return videoService.getVideoComments(params.videoId);
+            }
+        }
+    ]
 };

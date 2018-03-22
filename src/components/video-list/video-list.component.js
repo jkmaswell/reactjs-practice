@@ -1,5 +1,6 @@
 import React from 'react';
 import './video-list.component.css'
+import {UISref} from "@uirouter/react";
 
 export class VideoList extends React.Component {
 
@@ -26,15 +27,17 @@ export class VideoList extends React.Component {
                         {this.state.videos.map(video => {
                             return (
                                 <div className="col-md-3 video" key={video.id}>
-                                    <a>
-                                        <figure>
-                                            <div className="image">
-                                                <img src={video.pictures.sizes[3].link} alt="" />
-                                                <div className="hover"></div>
-                                            </div>
-                                            <figcaption>{video.name}</figcaption>
-                                        </figure>
-                                    </a>
+                                    <UISref to="video" params={{videoId: video.id}}>
+                                        <a>
+                                            <figure>
+                                                <div className="image">
+                                                    <img src={video.pictures.sizes[3].link} alt=""/>
+                                                    <div className="hover"></div>
+                                                </div>
+                                                <figcaption>{video.name}</figcaption>
+                                            </figure>
+                                        </a>
+                                    </UISref>
                                 </div>
                             );
                         })}

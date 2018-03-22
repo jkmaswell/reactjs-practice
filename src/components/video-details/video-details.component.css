@@ -1,0 +1,123 @@
+main {
+  display: inline-block;
+  padding-left: 322px;
+  width: 100%; }
+  main .player {
+    background: #000000;
+    height: 0;
+    padding-bottom: 42.1875%;
+    position: relative; }
+  main .stats {
+    border-bottom: 1px solid #EEEEEE;
+    padding: 15px;
+    text-align: right; }
+    @media screen and (max-width: 767px) {
+      main .stats {
+        text-align: center; } }
+    main .stats .plays,
+    main .stats .likes,
+    main .stats .comments {
+      color: #879CAB;
+      display: inline-block;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.5rem;
+      line-height: 1rem;
+      margin-left: 10px;
+      vertical-align: middle; }
+      @media screen and (max-width: 767px) {
+        main .stats .plays,
+        main .stats .likes,
+        main .stats .comments {
+          margin: 0 20px; } }
+      main .stats .plays::before,
+      main .stats .likes::before,
+      main .stats .comments::before {
+        background: url("../../assets/vimeotest-assets.png") no-repeat;
+        content: "";
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: middle; }
+    main .stats .plays::before {
+      background-position: -37px 0;
+      height: 13px;
+      width: 14px; }
+    main .stats .likes::before {
+      background-position: -37px -13px;
+      height: 12px;
+      width: 16px; }
+    main .stats .comments::before {
+      background-position: -37px -40px;
+      height: 13px;
+      width: 15px; }
+  main .info {
+    padding: 3rem; }
+    main .info .video-title {
+      margin-bottom: 20px; }
+      @media screen and (max-width: 767px) {
+        main .info .video-title {
+          margin-bottom: 40px;
+          margin-top: 20px; } }
+      main .info .video-title .user-img,
+      main .info .video-title .title {
+        display: inline-block;
+        vertical-align: middle; }
+      main .info .video-title .user-img {
+        border-radius: 50%;
+        margin-right: 20px;
+        overflow: hidden;
+        width: 75px; }
+        @media screen and (max-width: 767px) {
+          main .info .video-title .user-img {
+            display: none; } }
+      main .info .video-title .title {
+        width: calc(100% - 100px); }
+        main .info .video-title .title h1 {
+          color: #635492;
+          font-size: 4.9rem;
+          font-weight: 700;
+          margin: 0; }
+          @media screen and (max-width: 767px) {
+            main .info .video-title .title h1 {
+              font-size: 3rem; } }
+        main .info .video-title .title p {
+          color: #545454;
+          font-size: 1.8rem;
+          margin: 0; }
+          @media screen and (max-width: 767px) {
+            main .info .video-title .title p {
+              font-size: 1.4rem; } }
+          main .info .video-title .title p span {
+            color: #333333;
+            font-weight: 700; }
+            main .info .video-title .title p span.date {
+              color: #545454;
+              font-weight: 400; }
+    main .info .description {
+      color: #333333;
+      font-size: 1.8rem; }
+      @media screen and (max-width: 767px) {
+        main .info .description {
+          margin-bottom: 20px; } }
+  main .comments .comments-title {
+    color: #635492;
+    font-size: 4rem;
+    padding: 0 3rem;
+    margin-bottom: 2rem; }
+  main .comments ul {
+    list-style: none;
+    padding: 3rem; }
+    main .comments ul li {
+      padding: 1rem 0;
+      border-bottom: 1px solid #879CAB; }
+      main .comments ul li span {
+        display: block;
+        color: #333333;
+        font-size: 1.8rem; }
+        main .comments ul li span strong {
+          color: #635492; }
+        main .comments ul li span.date {
+          color: #879CAB;
+          font-size: 1.2rem;
+          font-style: italic; }
+      main .comments ul li:first-child {
+        border-top: 1px solid #879CAB; }

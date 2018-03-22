@@ -29,14 +29,14 @@ export class VideoService extends React.Component {
 
     getVideoDetail(videoId) {
         return this.videoResource.getVideoDetail(videoId).then(video => {
-            return video;
+            return video.data;
         });
     }
 
     getVideoComments(videoId) {
         return this.videoResource.getVideoComments(videoId).then(comments => {
             const videoComments = [];
-            comments.data.forEach(dto => {
+            comments.data.data.forEach(dto => {
                 videoComments.push(dto);
             });
             return videoComments;
