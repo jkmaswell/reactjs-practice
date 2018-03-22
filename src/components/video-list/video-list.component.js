@@ -1,13 +1,29 @@
 import React from 'react';
 import './video-list.component.css'
 
-export default class VideoList extends React.Component {
+export class VideoList extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            videos: props.videos
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.videos !== this.props.videos) {
+            this.setState({
+                videos: nextProps.videos
+            });
+        }
+    }
+
     render() {
         return (
             <section>
                 <main>
                     <div className="row">
-                        {this.props.videos.map(video => {
+                        {this.state.videos.map(video => {
                             return (
                                 <div className="col-md-3 video" key={video.id}>
                                     <a>

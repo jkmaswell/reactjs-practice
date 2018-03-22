@@ -5,7 +5,8 @@ main {
   main .row {
     margin: 0; }
   main .col-md-3 {
-    float: left; }
+    float: left;
+    width: 25%; }
     @media screen and (min-width: 1367px) {
       main .col-md-3:nth-child(4n+1) {
         clear: both; } }

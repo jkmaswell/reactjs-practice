@@ -1,10 +1,33 @@
 import React from 'react';
-import VideoList from "../../components/video-list/video-list.component";
+import {VideoList} from "../../components/video-list/video-list.component";
 
-export default class Dashboard extends React.Component {
+export class Dashboard extends React.Component {
+
+    constructor() {
+        super();
+        this.state = {
+            videos: [],
+            totalVideos: 0
+        }
+    }
+
+    componentWillMount() {
+        this.setState({
+            videos: this.props.categoryVideos
+        });
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.categoryVideos !== this.props.categoryVideos) {
+            this.setState({
+                videos: nextProps.categoryVideos
+            });
+        }
+    }
+
     render() {
         return (
-            <VideoList videos={this.props.categoryVideos} total={this.props.totalVideos} />
+            <VideoList videos={this.state.videos} total={this.state.totalVideos} />
         );
     }
 }

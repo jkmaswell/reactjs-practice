@@ -11,6 +11,7 @@ main {
 
     .col-md-3 {
         float: left;
+        width: 25%;
 
         @media screen and (min-width: 1367px) {
             &:nth-child(4n+1) {
