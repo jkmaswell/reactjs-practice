@@ -28,9 +28,9 @@ export class VideoList extends React.Component {
             <section>
                 <main>
                     <div className="row">
-                        {this.state.videos.map(video => {
+                        {this.state.videos.map((video, index) => {
                             return (
-                                <div className="col-md-3 video" key={video.id}>
+                                <div className="col-md-3 video" key={index}>
                                     <UISref to="video" params={{videoId: video.id}}>
                                         <a>
                                             <figure>

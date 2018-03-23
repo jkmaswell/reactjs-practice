@@ -55,9 +55,9 @@ export class VideoDetails extends React.Component {
                             <div className="comments">
                                 <h2 className="comments-title">Comments</h2>
                                 <ul>
-                                    {this.state.comments.map(comment => {
+                                    {this.state.comments.map((comment, index) => {
                                         return (
-                                            <li key={comment.id}>
+                                            <li key={index}>
                                                 <span><strong>{comment.user.name}</strong> {comment.text}</span>
                                                 <span className="date">{comment.created_on}</span>
                                             </li>

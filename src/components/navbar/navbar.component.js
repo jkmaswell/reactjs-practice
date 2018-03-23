@@ -30,9 +30,9 @@ export class NavBar extends React.Component {
                         <img src={logo} alt=""/>
                     </div>
                     <ul className="nav">
-                        {this.state.categories.map(category => {
+                        {this.state.categories.map((category, index) => {
                             return (
-                                <UISrefActive class="active" key={category.id}>
+                                <UISrefActive class="active" key={index}>
                                     <UISref to="dashboard" params={{categoryId: category.id, page: '1', perPage: '12'}}>
                                         <li><a>{category.name}</a></li>
                                     </UISref>
